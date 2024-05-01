@@ -10,14 +10,14 @@ config_version=5
 
 [application]
 
-config/name="First_Godot"
-run/main_scene="res://scenes/game.tscn"
+config/name="An Epic Knight Game!"
+run/main_scene="res://scenes/level/game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Music="*res://scenes/music.tscn"
+Music="*res://scenes/entity/music.tscn"
 
 [input]
 

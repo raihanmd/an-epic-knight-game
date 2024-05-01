@@ -1,23 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://bg4dl1k7xmi46"]
+[gd_scene load_steps=10 format=3 uid="uid://dlvdwe6tq4673"]
 
-[ext_resource type="Script" path="res://scripts/slime.gd" id="1_1jhxe"]
-[ext_resource type="Texture2D" uid="uid://dhnbj43kmh2er" path="res://assets/sprites/slime_purple.png" id="1_8kssv"]
-[ext_resource type="PackedScene" uid="uid://xikaq7lf072g" path="res://scenes/kill_zone.tscn" id="2_gt476"]
+[ext_resource type="Script" path="res://scripts/slime.gd" id="1_pgs3i"]
+[ext_resource type="Texture2D" uid="uid://dhnbj43kmh2er" path="res://assets/sprites/slime_purple.png" id="2_yk01i"]
+[ext_resource type="PackedScene" uid="uid://d3ts70ieor10" path="res://scenes/entity/kill_zone.tscn" id="3_86q8g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kn8ij"]
-atlas = ExtResource("1_8kssv")
+atlas = ExtResource("2_yk01i")
 region = Rect2(0, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hf2mv"]
-atlas = ExtResource("1_8kssv")
+atlas = ExtResource("2_yk01i")
 region = Rect2(24, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hl026"]
-atlas = ExtResource("1_8kssv")
+atlas = ExtResource("2_yk01i")
 region = Rect2(48, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yase4"]
-atlas = ExtResource("1_8kssv")
+atlas = ExtResource("2_yk01i")
 region = Rect2(72, 24, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tegjm"]
@@ -44,7 +44,7 @@ animations = [{
 size = Vector2(10, 15)
 
 [node name="slime" type="Node2D"]
-script = ExtResource("1_1jhxe")
+script = ExtResource("1_pgs3i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tegjm")
@@ -52,7 +52,7 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.960093
 
-[node name="kill_zone" parent="." instance=ExtResource("2_gt476")]
+[node name="kill_zone" parent="." instance=ExtResource("3_86q8g")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kill_zone"]
 position = Vector2(0, 4.5)
