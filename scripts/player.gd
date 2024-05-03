@@ -1,10 +1,8 @@
-extends CharacterBody2D
-
+class_name Player extends CharacterBody2D
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
 var isAlive: bool = true
-var can_dash: bool = true
 var direction: float
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var jump_sfx = $jump_sfx
@@ -13,7 +11,6 @@ var direction: float
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
-	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta

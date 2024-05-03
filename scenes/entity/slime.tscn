@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dlvdwe6tq4673"]
 
-[ext_resource type="Script" path="res://scripts/slime.gd" id="1_pgs3i"]
+[ext_resource type="Script" path="res://scripts/purple_slime.gd" id="1_pgs3i"]
 [ext_resource type="Texture2D" uid="uid://dhnbj43kmh2er" path="res://assets/sprites/slime_purple.png" id="2_yk01i"]
 [ext_resource type="PackedScene" uid="uid://d3ts70ieor10" path="res://scenes/entity/kill_zone.tscn" id="3_86q8g"]
 
@@ -50,7 +50,8 @@ script = ExtResource("1_pgs3i")
 sprite_frames = SubResource("SpriteFrames_tegjm")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.960093
+frame = 1
+frame_progress = 0.754843
 
 [node name="kill_zone" parent="." instance=ExtResource("3_86q8g")]
 
@@ -65,3 +66,11 @@ target_position = Vector2(7, 0)
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(0, 5)
 target_position = Vector2(-7, 0)
+
+[node name="RayCastBottomRight" type="RayCast2D" parent="."]
+position = Vector2(0, 5)
+target_position = Vector2(9, 8)
+
+[node name="RayCastBottomLeft" type="RayCast2D" parent="."]
+position = Vector2(0, 5)
+target_position = Vector2(-9, 8)
