@@ -43,7 +43,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krouh"]
 size = Vector2(10, 15)
 
-[node name="slime" type="Node2D"]
+[node name="purple_slime" type="Node2D"]
+position = Vector2(0, -12)
 script = ExtResource("1_pgs3i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
