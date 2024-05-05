@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://dy6vyqhllt7hr"]
 
-[ext_resource type="Texture2D" uid="uid://b8fvyw12mt872" path="res://assets/sprites/Traps/Saw/Off.png" id="1_72xrn"]
-[ext_resource type="Texture2D" uid="uid://bpkmun0yut3t" path="res://assets/sprites/Traps/Saw/On (38x38).png" id="2_8vd0a"]
-[ext_resource type="PackedScene" uid="uid://d3ts70ieor10" path="res://scenes/entity/kill_zone.tscn" id="2_wrqbs"]
+[ext_resource type="Texture2D" uid="uid://b8fvyw12mt872" path="res://assets/sprites/traps/saw/Off.png" id="1_72xrn"]
+[ext_resource type="Texture2D" uid="uid://bpkmun0yut3t" path="res://assets/sprites/traps/saw/On (38x38).png" id="2_8vd0a"]
+[ext_resource type="PackedScene" uid="uid://d3ts70ieor10" path="res://prefabs/entities/kill_zone.tscn" id="2_wrqbs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6862w"]
 atlas = ExtResource("1_72xrn")

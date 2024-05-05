@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cepfwcu1uilst"
-path="res://.godot/imported/HitTop (22x22).png-ef27f08a34aa325a268abe3949eb9970.ctex"
+path="res://.godot/imported/HitTop (22x22).png-bb9d18b5cb9954524ea5ed8cdfbd731f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Traps/Blocks/HitTop (22x22).png"
-dest_files=["res://.godot/imported/HitTop (22x22).png-ef27f08a34aa325a268abe3949eb9970.ctex"]
+source_file="res://assets/sprites/traps/blocks/HitTop (22x22).png"
+dest_files=["res://.godot/imported/HitTop (22x22).png-bb9d18b5cb9954524ea5ed8cdfbd731f.ctex"]
 
 [params]
 

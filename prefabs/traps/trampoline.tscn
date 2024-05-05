@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cjwu68vuqqmsr"]
+[gd_scene load_steps=12 format=3 uid="uid://cjwu68vuqqmsr"]
 
-[ext_resource type="Texture2D" uid="uid://buko8iy2jjk21" path="res://assets/sprites/Traps/Trampoline/Idle.png" id="1_8ujs5"]
+[ext_resource type="Texture2D" uid="uid://buko8iy2jjk21" path="res://assets/sprites/traps/Trampolint/Idle.png" id="1_8ujs5"]
 [ext_resource type="Script" path="res://scripts/trampoline.gd" id="1_fj218"]
-[ext_resource type="Texture2D" uid="uid://bi11plaw4dce6" path="res://assets/sprites/Traps/Trampoline/Jump (28x28).png" id="2_pcncc"]
+[ext_resource type="Texture2D" uid="uid://bi11plaw4dce6" path="res://assets/sprites/traps/Trampolint/Jump (28x28).png" id="2_pcncc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5gwet"]
 atlas = ExtResource("1_8ujs5")
@@ -16,17 +16,9 @@ region = Rect2(0, 0, 28, 28)
 atlas = ExtResource("2_pcncc")
 region = Rect2(28, 0, 28, 28)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_62yl1"]
-atlas = ExtResource("2_pcncc")
-region = Rect2(56, 0, 28, 28)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_1sagu"]
 atlas = ExtResource("2_pcncc")
 region = Rect2(84, 0, 28, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_13cqv"]
-atlas = ExtResource("2_pcncc")
-region = Rect2(112, 0, 28, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_okedj"]
 atlas = ExtResource("2_pcncc")
@@ -43,20 +35,14 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 5.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_qtbr4")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t7uoy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_62yl1")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_1sagu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_13cqv")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_okedj")
@@ -78,6 +64,7 @@ script = ExtResource("1_fj218")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1mebo")
 animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 10)

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8fvyw12mt872"
-path="res://.godot/imported/Off.png-502e07fc677b84d8a11d041027db9393.ctex"
+path="res://.godot/imported/Off.png-7601b84578c0d61c216f3f0f3acb55e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Traps/Saw/Off.png"
-dest_files=["res://.godot/imported/Off.png-502e07fc677b84d8a11d041027db9393.ctex"]
+source_file="res://assets/sprites/traps/saw/Off.png"
+dest_files=["res://.godot/imported/Off.png-7601b84578c0d61c216f3f0f3acb55e7.ctex"]
 
 [params]
 

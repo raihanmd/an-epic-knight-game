@@ -10,7 +10,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func throw_player(body: Player):
 	animated_sprite_2d.play('jump')
-	await get_tree().create_timer(.5).timeout
+	await get_tree().create_timer(.2).timeout
 	if isPlayerTouch:
 		body.velocity.y = -500
 
