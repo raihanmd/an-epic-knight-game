@@ -247,3 +247,6 @@ bus = &"Sfx"
 [node name="die_sfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_u5x5y")
 bus = &"Sfx"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://b2uaclxdfccds"]
 
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_villg"]
+[ext_resource type="PackedScene" uid="uid://tyjky3rimgru" path="res://scenes/game_manager/game_manager.tscn" id="1_m0wwo"]
 [ext_resource type="TileSet" uid="uid://cqhrvlybydekj" path="res://assets/tileset/main.tres" id="2_4y4ew"]
 [ext_resource type="FontFile" uid="uid://xt6nhrl0h4x4" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_s1wor"]
 [ext_resource type="PackedScene" uid="uid://bnxvjo1g1vle0" path="res://prefabs/player/player.tscn" id="4_3t7bd"]
@@ -81,9 +81,8 @@ _data = {
 [node name="level_1" type="Node2D"]
 position = Vector2(369, -320)
 
-[node name="GameManager" type="Node" parent="."]
+[node name="GameManager" parent="." instance=ExtResource("1_m0wwo")]
 unique_name_in_owner = true
-script = ExtResource("1_villg")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_4y4ew")
@@ -287,7 +286,17 @@ offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("8_hv678")
 theme_override_font_sizes/font_size = 32
 text = "Score: "
-metadata/_edit_use_anchors_ = true
+
+[node name="EnergyBar" type="HSlider" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 18.0
+offset_top = 27.0
+offset_right = 171.0
+offset_bottom = 125.0
+size_flags_horizontal = 4
+value = 100.0
+editable = false
+scrollable = false
 
 [node name="door" parent="." instance=ExtResource("11_41x17")]
 position = Vector2(1537, -368)

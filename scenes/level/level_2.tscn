@@ -1,16 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcsa0igr363oq"]
+[gd_scene load_steps=10 format=3 uid="uid://bcsa0igr363oq"]
 
 [ext_resource type="TileSet" uid="uid://cqhrvlybydekj" path="res://assets/tileset/main.tres" id="1_adggl"]
+[ext_resource type="PackedScene" uid="uid://tyjky3rimgru" path="res://scenes/game_manager/game_manager.tscn" id="1_qfbga"]
 [ext_resource type="PackedScene" uid="uid://bnxvjo1g1vle0" path="res://prefabs/player/player.tscn" id="2_dbnoa"]
 [ext_resource type="PackedScene" uid="uid://d3ts70ieor10" path="res://prefabs/entities/kill_zone.tscn" id="3_4e768"]
 [ext_resource type="PackedScene" uid="uid://vd2s5h16kcug" path="res://prefabs/traps/fire.tscn" id="4_s313j"]
 [ext_resource type="PackedScene" uid="uid://dy6vyqhllt7hr" path="res://prefabs/traps/saw.tscn" id="5_jxsrw"]
 [ext_resource type="PackedScene" uid="uid://cjwu68vuqqmsr" path="res://prefabs/traps/trampoline.tscn" id="6_5rxsp"]
+[ext_resource type="FontFile" uid="uid://jnbsqygdp2hb" path="res://assets/fonts/PixelOperator8.ttf" id="8_r7tpg"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qb42f"]
 
 [node name="level_2" type="Node2D"]
 position = Vector2(370, -320)
+
+[node name="GameManager" parent="." instance=ExtResource("1_qfbga")]
+unique_name_in_owner = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_adggl")
@@ -76,3 +81,26 @@ position = Vector2(476, -394)
 
 [node name="trampoline4" parent="Traps" instance=ExtResource("6_5rxsp")]
 position = Vector2(534, -417)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreText" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 17.0
+offset_top = 16.0
+offset_right = 193.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("8_r7tpg")
+theme_override_font_sizes/font_size = 32
+text = "Score: "
+
+[node name="EnergyBar" type="HSlider" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 18.0
+offset_top = 27.0
+offset_right = 171.0
+offset_bottom = 125.0
+size_flags_horizontal = 4
+value = 100.0
+editable = false
+scrollable = false

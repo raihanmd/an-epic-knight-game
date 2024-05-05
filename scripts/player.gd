@@ -1,21 +1,24 @@
 class_name Player extends CharacterBody2D
 
-const SPEED: float = 150
-const JUMP_VELOCITY: float = -300
+@export var speed: float = 150
+@export var jump_velocity: float = -300
+@export var dash_speed: float = 600
+@export var dash_duration: float = .1
+@export var energy: float = 100
+@export var dash_cost: float = 30
 
 var is_alive: bool = true
 var direction: float
-var can_roll: bool = true
 @onready var animated_sprite = $AnimatedSprite2D
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
 	if is_alive:
+		heal_energy(delta)
 		handle_move()
 		handle_jump()
 		handle_flip()
-		handle_roll()
 	velocity.y += gravity * delta
 	handle_anim()
 	move_and_slide()
@@ -23,11 +26,17 @@ func _physics_process(delta):
 func handle_jump():
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		$jump_sfx.play()
-		velocity.y = JUMP_VELOCITY
+		velocity.y = jump_velocity
 
 func handle_move():
 	direction = Input.get_axis("move_left", "move_right")
-	velocity.x = direction * SPEED
+	if is_on_floor() and Input.is_action_just_pressed("roll") and $Timer.is_stopped() and energy >= dash_cost:
+		energy -= dash_cost
+		%GameManager.handle_energy(energy)
+		animated_sprite.play("roll")
+		roll_start(dash_duration)
+	var speed_velocity = dash_speed if not $Timer.is_stopped() else speed
+	velocity.x = direction * speed_velocity
 
 func handle_anim():
 	if is_on_floor():
@@ -44,10 +53,12 @@ func handle_flip():
 	elif direction < 0:
 		animated_sprite.flip_h = true
 
-func handle_roll():
-	if Input.is_action_just_pressed("roll") and can_roll and is_on_floor():
-		can_roll = false
-		animated_sprite.play("roll")
-		velocity.x += direction * 700
-		await  get_tree().create_timer(1).timeout
-		can_roll = true
+func heal_energy(delta: float):
+	var energy_regeneration: float = 5 * delta
+	energy = min(energy + energy_regeneration, 100)
+	%GameManager.handle_energy(energy)
+
+
+func roll_start(duration: float):
+	$Timer.wait_time = duration
+	$Timer.start()

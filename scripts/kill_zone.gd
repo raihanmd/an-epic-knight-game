@@ -13,5 +13,6 @@ func reload_scene():
 func remove_player(player: Player):
 	player.is_alive = false
 	player.velocity.y = -200
+	player.velocity.x = randf_range(-100, 100)
 	player.get_node("die_sfx").play()
 	player.get_node("CollisionShape2D").queue_free()
