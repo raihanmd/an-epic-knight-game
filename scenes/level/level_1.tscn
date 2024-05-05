@@ -213,15 +213,15 @@ libraries = {
 autoplay = "move"
 
 [node name="Platform3" parent="Platforms" instance=ExtResource("7_5at8v")]
-position = Vector2(2060, -584)
+position = Vector2(2048, -576)
 
 [node name="Labels" type="Node" parent="."]
 
 [node name="Label" type="Label" parent="Labels"]
-offset_left = 345.0
-offset_top = -340.0
-offset_right = 507.0
-offset_bottom = -328.0
+offset_left = 376.0
+offset_top = -320.0
+offset_right = 538.0
+offset_bottom = -308.0
 theme_override_colors/font_color = Color(0.0980392, 0.313726, 0.752941, 1)
 theme_override_fonts/font = ExtResource("8_hv678")
 theme_override_font_sizes/font_size = 8
@@ -229,10 +229,10 @@ text = "Use WASD to move..."
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="Labels"]
-offset_left = 1125.0
-offset_top = -344.0
-offset_right = 1232.0
-offset_bottom = -325.0
+offset_left = 1083.0
+offset_top = -412.0
+offset_right = 1190.0
+offset_bottom = -393.0
 theme_override_colors/font_color = Color(0.0980392, 0.313726, 0.752941, 1)
 theme_override_fonts/font = ExtResource("8_hv678")
 theme_override_font_sizes/font_size = 8
@@ -241,10 +241,10 @@ autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="Labels"]
-offset_left = 1366.0
-offset_top = -646.0
-offset_right = 1486.0
-offset_bottom = -627.0
+offset_left = 1810.0
+offset_top = -561.0
+offset_right = 1930.0
+offset_bottom = -542.0
 theme_override_colors/font_color = Color(0.0980392, 0.313726, 0.752941, 1)
 theme_override_fonts/font = ExtResource("8_hv678")
 theme_override_font_sizes/font_size = 8

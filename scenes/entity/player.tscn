@@ -182,8 +182,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cy2x"]
-size = Vector2(10, 9)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ggxr2"]
+radius = 5.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
@@ -197,8 +197,8 @@ animation = &"jump"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4.5)
-shape = SubResource("RectangleShape2D_4cy2x")
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_ggxr2")
 
 [node name="jump_sfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_rg5da")

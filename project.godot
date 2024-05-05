@@ -19,9 +19,19 @@ config/icon="res://icon.svg"
 
 Music="*res://scenes/entity/music.tscn"
 
+[debug]
+
+gdscript/warnings/unused_variable=0
+
 [display]
 
+window/size/viewport_width=1080
+window/size/viewport_height=600
 window/size/always_on_top=true
+
+[editor]
+
+movie_writer/movie_file="D:/Godot/An Epic Knight Game!/movie/main.avi"
 
 [input]
 

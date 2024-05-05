@@ -1,7 +1,7 @@
 class_name Player extends CharacterBody2D
 
 const SPEED = 150.0
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -280.0
 var isAlive: bool = true
 var direction: float
 @onready var animated_sprite = $AnimatedSprite2D
@@ -43,3 +43,4 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
