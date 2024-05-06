@@ -2,8 +2,8 @@ class_name Player extends CharacterBody2D
 
 @export var speed: float = 150
 @export var jump_velocity: float = -300
-@export var dash_speed: float = 600
-@export var dash_duration: float = .1
+@export var dash_speed: float = 300
+@export var dash_duration: float = .3
 @export var energy: float = 100
 @export var dash_cost: float = 30
 
@@ -30,7 +30,7 @@ func handle_jump():
 
 func handle_move():
 	direction = Input.get_axis("move_left", "move_right")
-	if is_on_floor() and Input.is_action_just_pressed("roll") and $Timer.is_stopped() and energy >= dash_cost:
+	if is_on_floor() and Input.is_action_just_pressed("roll") and $Timer.is_stopped() and energy >= dash_cost and not direction == 0:
 		energy -= dash_cost
 		%GameManager.handle_energy(energy)
 		animated_sprite.play("roll")
@@ -40,7 +40,9 @@ func handle_move():
 
 func handle_anim():
 	if is_on_floor():
-		if direction == 0:
+		if not $Timer.is_stopped():
+			animated_sprite.play('roll')
+		elif direction == 0:
 			animated_sprite.play("idle")
 		else:
 			animated_sprite.play("run")
