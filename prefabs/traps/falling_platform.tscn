@@ -1,0 +1,88 @@
+[gd_scene load_steps=12 format=3 uid="uid://cbwyb87oyltqw"]
+
+[ext_resource type="Script" path="res://scripts/falling_platform.gd" id="1_5yydl"]
+[ext_resource type="Texture2D" uid="uid://clxgjn3ib1ww8" path="res://assets/sprites/traps/falling_platforms/Off.png" id="1_6waiu"]
+[ext_resource type="Texture2D" uid="uid://bfby5avhy12i5" path="res://assets/sprites/traps/falling_platforms/On (32x10).png" id="2_3dhbg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1h0o"]
+atlas = ExtResource("1_6waiu")
+region = Rect2(0, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grgk7"]
+atlas = ExtResource("2_3dhbg")
+region = Rect2(0, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w08l8"]
+atlas = ExtResource("2_3dhbg")
+region = Rect2(32, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bomkm"]
+atlas = ExtResource("2_3dhbg")
+region = Rect2(64, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdiyo"]
+atlas = ExtResource("2_3dhbg")
+region = Rect2(96, 0, 32, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ol4pj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1h0o")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grgk7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w08l8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bomkm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdiyo")
+}],
+"loop": true,
+"name": &"on",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_le7h0"]
+size = Vector2(30, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5ym6"]
+size = Vector2(30, 1)
+
+[node name="falling_platform" type="CharacterBody2D"]
+motion_mode = 1
+platform_wall_layers = 2
+script = ExtResource("1_5yydl")
+
+[node name="respawn_timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ol4pj")
+animation = &"on"
+autoplay = "on"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_le7h0")
+one_way_collision = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_b5ym6")
+
+[connection signal="timeout" from="respawn_timer" to="." method="_on_respawn_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

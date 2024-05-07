@@ -73,7 +73,7 @@ disable_mode = 2
 collision_mask = 3
 script = ExtResource("1_yf8br")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="fire_duration" type="Timer" parent="."]
 wait_time = 2.5
 one_shot = true
 
@@ -81,7 +81,6 @@ one_shot = true
 sprite_frames = SubResource("SpriteFrames_2dgn2")
 animation = &"off"
 autoplay = "off"
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8.5)
@@ -102,6 +101,6 @@ position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_j45ag")
 disabled = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="fire_duration" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
