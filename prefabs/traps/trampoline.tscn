@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cjwu68vuqqmsr"]
+[gd_scene load_steps=13 format=3 uid="uid://cjwu68vuqqmsr"]
 
 [ext_resource type="Texture2D" uid="uid://buko8iy2jjk21" path="res://assets/sprites/traps/Trampolint/Idle.png" id="1_8ujs5"]
 [ext_resource type="Script" path="res://scripts/trampoline.gd" id="1_fj218"]
 [ext_resource type="Texture2D" uid="uid://bi11plaw4dce6" path="res://assets/sprites/traps/Trampolint/Jump (28x28).png" id="2_pcncc"]
+[ext_resource type="AudioStream" uid="uid://c2ahje6u6yre1" path="res://assets/sounds/footstep/feet_02.wav" id="4_mhxcm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5gwet"]
 atlas = ExtResource("1_8ujs5")
@@ -76,6 +77,10 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.5, 4.5)
 shape = SubResource("RectangleShape2D_wp284")
+
+[node name="boing_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_mhxcm")
+bus = &"Sfx"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

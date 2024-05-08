@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b2uaclxdfccds"]
+[gd_scene load_steps=20 format=3 uid="uid://b2uaclxdfccds"]
 
 [ext_resource type="PackedScene" uid="uid://tyjky3rimgru" path="res://scenes/game_manager/game_manager.tscn" id="1_m0wwo"]
 [ext_resource type="TileSet" uid="uid://cqhrvlybydekj" path="res://assets/tileset/main.tres" id="2_4y4ew"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dlvdwe6tq4673" path="res://prefabs/entities/purple_slime.tscn" id="9_ti4rw"]
 [ext_resource type="PackedScene" uid="uid://brdtjgv1xy27c" path="res://prefabs/entities/green_slime.tscn" id="10_qqnt7"]
 [ext_resource type="PackedScene" uid="uid://c00cvpjded7e4" path="res://prefabs/entities/door.tscn" id="11_41x17"]
+[ext_resource type="PackedScene" uid="uid://dqfs7jud58o1x" path="res://scenes/ui/ui.tscn" id="12_1wham"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qhhyq"]
 
@@ -81,6 +82,9 @@ _data = {
 [node name="level_1" type="Node2D"]
 position = Vector2(369, -320)
 
+[node name="ui" parent="." instance=ExtResource("12_1wham")]
+unique_name_in_owner = true
+
 [node name="GameManager" parent="." instance=ExtResource("1_m0wwo")]
 unique_name_in_owner = true
 
@@ -100,7 +104,7 @@ layer_2/tile_data = PackedInt32Array(131071, 65536, 3, 196615, 65536, 3, -131033
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -7)
 zoom = Vector2(4, 4)
-limit_bottom = -200
+limit_bottom = -210
 limit_smoothed = true
 position_smoothing_enabled = true
 
@@ -274,29 +278,6 @@ position = Vector2(733, -332)
 
 [node name="green_slime" parent="Enemy" instance=ExtResource("10_qqnt7")]
 position = Vector2(2022, -544)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ScoreText" type="Label" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 17.0
-offset_top = 16.0
-offset_right = 193.0
-offset_bottom = 48.0
-theme_override_fonts/font = ExtResource("8_hv678")
-theme_override_font_sizes/font_size = 32
-text = "Score: "
-
-[node name="EnergyBar" type="HSlider" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 18.0
-offset_top = 27.0
-offset_right = 171.0
-offset_bottom = 125.0
-size_flags_horizontal = 4
-value = 100.0
-editable = false
-scrollable = false
 
 [node name="door" parent="." instance=ExtResource("11_41x17")]
 position = Vector2(1537, -368)

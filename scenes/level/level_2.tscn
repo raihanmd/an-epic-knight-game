@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bcsa0igr363oq"]
+[gd_scene load_steps=11 format=3 uid="uid://bcsa0igr363oq"]
 
 [ext_resource type="TileSet" uid="uid://cqhrvlybydekj" path="res://assets/tileset/main.tres" id="1_adggl"]
 [ext_resource type="PackedScene" uid="uid://tyjky3rimgru" path="res://scenes/game_manager/game_manager.tscn" id="1_qfbga"]
@@ -7,14 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://vd2s5h16kcug" path="res://prefabs/traps/fire.tscn" id="4_s313j"]
 [ext_resource type="PackedScene" uid="uid://dy6vyqhllt7hr" path="res://prefabs/traps/saw.tscn" id="5_jxsrw"]
 [ext_resource type="PackedScene" uid="uid://cjwu68vuqqmsr" path="res://prefabs/traps/trampoline.tscn" id="6_5rxsp"]
-[ext_resource type="FontFile" uid="uid://jnbsqygdp2hb" path="res://assets/fonts/PixelOperator8.ttf" id="8_r7tpg"]
 [ext_resource type="PackedScene" uid="uid://cbwyb87oyltqw" path="res://prefabs/traps/falling_platform.tscn" id="9_nyhnq"]
-[ext_resource type="PackedScene" uid="uid://dmjg5fyq3gm7q" path="res://prefabs/player/neolax.tscn" id="10_82hq5"]
+[ext_resource type="PackedScene" uid="uid://dqfs7jud58o1x" path="res://scenes/ui/ui.tscn" id="9_w1df7"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qb42f"]
 
 [node name="level_2" type="Node2D"]
 position = Vector2(370, -320)
+
+[node name="ui" parent="." instance=ExtResource("9_w1df7")]
+unique_name_in_owner = true
 
 [node name="GameManager" parent="." instance=ExtResource("1_qfbga")]
 unique_name_in_owner = true
@@ -96,28 +98,4 @@ position = Vector2(882, -299)
 [node name="falling_platform3" parent="Traps" instance=ExtResource("9_nyhnq")]
 position = Vector2(914, -299)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ScoreText" type="Label" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 17.0
-offset_top = 16.0
-offset_right = 193.0
-offset_bottom = 48.0
-theme_override_fonts/font = ExtResource("8_r7tpg")
-theme_override_font_sizes/font_size = 32
-text = "Score: "
-
-[node name="EnergyBar" type="HSlider" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 18.0
-offset_top = 27.0
-offset_right = 171.0
-offset_bottom = 125.0
-size_flags_horizontal = 4
-value = 100.0
-editable = false
-scrollable = false
-
-[node name="neolax" parent="." instance=ExtResource("10_82hq5")]
-position = Vector2(-229, -9)
+[editable path="ui"]

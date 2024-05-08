@@ -22,7 +22,6 @@ func _physics_process(delta: float) -> void:
 func falling(delta: float):
 	$AnimatedSprite2D.play('off')
 	velocity.y += 300 * delta
-	await get_tree().create_timer(.3).timeout
 	if respawn_timer.is_stopped():
 		respawn_timer.start()
 

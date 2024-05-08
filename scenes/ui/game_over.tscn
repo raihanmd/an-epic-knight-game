@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://ntuoqp1mms62"]
+
+[ext_resource type="FontFile" uid="uid://jnbsqygdp2hb" path="res://assets/fonts/PixelOperator8.ttf" id="1_hmggp"]
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_upkq7"]
+[ext_resource type="Texture2D" uid="uid://ee2rsujktf2p" path="res://vendor/Menu/Buttons/Restart.png" id="2_cg3a4"]
+[ext_resource type="Texture2D" uid="uid://c3a1cokeaced5" path="res://vendor/Menu/Buttons/Settings.png" id="4_3mknc"]
+[ext_resource type="Texture2D" uid="uid://cxy33xm3pru6c" path="res://vendor/Menu/Buttons/Volume.png" id="4_kkrsx"]
+
+[node name="game_over" type="CanvasLayer"]
+script = ExtResource("1_upkq7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.160784)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -93.0
+offset_right = 248.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_hmggp")
+theme_override_font_sizes/font_size = 64
+text = "Game Over"
+
+[node name="Setting" type="TextureButton" parent="ColorRect"]
+layout_mode = 2
+offset_left = 1009.0
+offset_top = 9.0
+offset_right = 1077.0
+offset_bottom = 68.0
+grow_horizontal = 0
+size_flags_stretch_ratio = 15.52
+texture_normal = ExtResource("4_3mknc")
+stretch_mode = 5
+
+[node name="Sound" type="TextureButton" parent="ColorRect"]
+layout_mode = 2
+offset_left = 1009.0
+offset_top = 72.0
+offset_right = 1077.0
+offset_bottom = 131.0
+grow_horizontal = 0
+size_flags_stretch_ratio = 15.52
+texture_normal = ExtResource("4_kkrsx")
+stretch_mode = 5
+
+[node name="Restart" type="TextureButton" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = 1.0
+offset_right = 95.0
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_cg3a4")
+stretch_mode = 5
+
+[connection signal="pressed" from="ColorRect/Restart" to="." method="_on_texture_button_pressed"]
