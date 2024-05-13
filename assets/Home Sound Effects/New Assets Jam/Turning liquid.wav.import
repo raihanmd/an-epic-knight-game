@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dkj5hk7ypx0e6"
+path="res://.godot/imported/Turning liquid.wav-3d92ee143d2b48152497632d0592683b.sample"
+
+[deps]
+
+source_file="res://assets/Home Sound Effects/New Assets Jam/Turning liquid.wav"
+dest_files=["res://.godot/imported/Turning liquid.wav-3d92ee143d2b48152497632d0592683b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

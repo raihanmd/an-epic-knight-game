@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dqymvt0nlju5e"
+path="res://.godot/imported/Writing.wav-57f55f947e79c600b84c2743141277dc.sample"
+
+[deps]
+
+source_file="res://assets/Home Sound Effects/New Assets Jam/Writing.wav"
+dest_files=["res://.godot/imported/Writing.wav-57f55f947e79c600b84c2743141277dc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
