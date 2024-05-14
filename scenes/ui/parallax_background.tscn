@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://b61c7nuapn68x"]
+
+[ext_resource type="Script" path="res://scripts/parallax_background.gd" id="1_lugat"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("1_lugat")
+
+[node name="Background" type="Sprite2D" parent="."]
+centered = false
+
+[node name="Mid" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Mid"]
+centered = false
+
+[node name="Front" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Front"]
+centered = false
