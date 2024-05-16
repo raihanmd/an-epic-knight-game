@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://crcgq3ft031op"]
+
+[ext_resource type="Texture2D" uid="uid://bk2fykycojsii" path="res://assets/PlatformSimpleTileset16x16/Tileset/SimpleTileset2.png" id="1_7eev3"]
+[ext_resource type="Script" path="res://scripts/sign.gd" id="1_jlwjj"]
+[ext_resource type="FontFile" uid="uid://jnbsqygdp2hb" path="res://assets/fonts/PixelOperator8.ttf" id="3_3lyel"]
+[ext_resource type="Texture2D" uid="uid://cnnai41cxp1pi" path="res://assets/GUI.png" id="3_6uxh7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xfokc"]
+radius = 6.0
+
+[node name="Sign" type="Area2D" node_paths=PackedStringArray("label", "container", "background")]
+collision_mask = 2
+script = ExtResource("1_jlwjj")
+text = "Lorem Ipsum Dolor sit amet"
+label = NodePath("Control/MarginContainer/NinePatchRect/CenterContainer/Label")
+container = NodePath("Control")
+background = NodePath("Control/MarginContainer")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_7eev3")
+region_enabled = true
+region_rect = Rect2(176, 48, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_xfokc")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -20.0
+offset_top = -29.0
+offset_right = 20.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 21.0
+offset_bottom = 13.0
+grow_horizontal = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_6uxh7")
+region_rect = Rect2(49, 97, 30, 30)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/MarginContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.049
+anchor_top = 0.154
+anchor_right = 0.951
+anchor_bottom = 0.846
+offset_left = -0.00900006
+offset_top = -0.00200009
+offset_right = 0.00899887
+offset_bottom = 0.00199986
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/NinePatchRect/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("3_3lyel")
+theme_override_font_sizes/font_size = 5
+text = "asdasd"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
