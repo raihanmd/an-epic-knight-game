@@ -15,7 +15,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _physics_process(delta: float) -> void:
 	if is_falling:
 		falling(delta)
+		$CollisionShape2D.disabled = true
 	else:
+		$CollisionShape2D.disabled = false
 		set_back_position(delta)
 	move_and_slide()
 

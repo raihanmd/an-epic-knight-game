@@ -15,10 +15,6 @@ run/main_scene="res://scenes/ui/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-Music="*res://prefabs/entities/music.tscn"
-
 [debug]
 
 gdscript/warnings/unused_variable=0

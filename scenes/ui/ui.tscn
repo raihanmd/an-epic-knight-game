@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqfs7jud58o1x"]
+[gd_scene load_steps=5 format=3 uid="uid://dqfs7jud58o1x"]
 
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_2nsuh"]
 [ext_resource type="FontFile" uid="uid://jnbsqygdp2hb" path="res://assets/fonts/PixelOperator8.ttf" id="1_winh4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1cfxc"]
@@ -16,6 +17,7 @@ shadow_color = Color(0, 0, 0, 0.517647)
 anti_aliasing = false
 
 [node name="ui" type="CanvasLayer"]
+script = ExtResource("1_2nsuh")
 
 [node name="ScoreText" type="Label" parent="."]
 offset_left = 4.0
@@ -36,3 +38,18 @@ theme_override_styles/background = SubResource("StyleBoxFlat_1cfxc")
 theme_override_styles/fill = SubResource("StyleBoxFlat_dc1y1")
 value = 100.0
 show_percentage = false
+
+[node name="MapLabel" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -113.0
+offset_top = 4.0
+offset_right = -3.0
+offset_bottom = 12.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_winh4")
+theme_override_font_sizes/font_size = 8
+text = "Tobangado Village"
+horizontal_alignment = 2
+vertical_alignment = 1
