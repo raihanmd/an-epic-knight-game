@@ -1,17 +1,17 @@
 [gd_scene load_steps=20 format=3 uid="uid://pj824y2bmh6r"]
 
-[ext_resource type="Texture2D" uid="uid://ddh3ntjcc14m3" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="1_88iwh"]
-[ext_resource type="Texture2D" uid="uid://dsshdr1ijp108" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Buildings.png" id="2_jtbw8"]
+[ext_resource type="Texture2D" uid="uid://ddh3ntjcc14m3" path="res://assets/tileset/Tiles.png" id="1_mup1l"]
+[ext_resource type="Texture2D" uid="uid://dsshdr1ijp108" path="res://assets/tileset/Buildings.png" id="2_iy7ct"]
 [ext_resource type="Texture2D" uid="uid://j54jo6bwcthn" path="res://assets/sprites/tilesets/world_tileset.png" id="2_ogppk"]
 [ext_resource type="Texture2D" uid="uid://bq81anujwmxvy" path="res://assets/Legacy-Fantasy - High Forest 2.3/Trees/Yellow-Tree.png" id="3_tijxu"]
-[ext_resource type="Texture2D" uid="uid://bcwr5x4vna75n" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Interior-01.png" id="3_xemjv"]
 [ext_resource type="Texture2D" uid="uid://b55nb185k8uwg" path="res://assets/Retro Pixel Ribbons, Banners and Frames 2/11.png" id="4_c75xm"]
-[ext_resource type="Texture2D" uid="uid://be3sqxkafbl5e" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="4_xl7tm"]
+[ext_resource type="Texture2D" uid="uid://bcwr5x4vna75n" path="res://assets/tileset/Interior-01.png" id="5_qum1p"]
+[ext_resource type="Texture2D" uid="uid://be3sqxkafbl5e" path="res://assets/tileset/Tree-Assets.png" id="6_pndjb"]
 [ext_resource type="Texture2D" uid="uid://chdq4k2yth27q" path="res://assets/Legacy-Fantasy - High Forest 2.3/Trees/Background.png" id="7_xvx7m"]
 [ext_resource type="Texture2D" uid="uid://bxkl7pprpldgk" path="res://assets/Legacy-Fantasy - High Forest 2.3/Trees/Green-Tree.png" id="10_rry85"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3w4jf"]
-texture = ExtResource("1_88iwh")
+texture = ExtResource("1_mup1l")
 6:0/0 = 0
 6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:0/0/physics_layer_0/angular_velocity = 0.0
@@ -954,7 +954,7 @@ texture = ExtResource("1_88iwh")
 7:5/0/physics_layer_0/polygon_0/one_way = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v7oht"]
-texture = ExtResource("2_jtbw8")
+texture = ExtResource("2_iy7ct")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -2080,7 +2080,7 @@ texture = ExtResource("4_c75xm")
 0:5/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3vawt"]
-texture = ExtResource("3_xemjv")
+texture = ExtResource("5_qum1p")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -2713,7 +2713,7 @@ texture = ExtResource("3_xemjv")
 8:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_db7b6"]
-texture = ExtResource("4_xl7tm")
+texture = ExtResource("6_pndjb")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0

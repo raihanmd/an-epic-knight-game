@@ -4,3 +4,6 @@
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_dnxqa")
+
+[connection signal="energy_change" from="." to="." method="_on_energy_change"]
+[connection signal="score_change" from="." to="." method="_on_score_change"]

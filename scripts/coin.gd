@@ -5,5 +5,5 @@ class_name Coin extends Area2D
 
 func _on_body_entered(body):
 	if body is Player:
-		game_manager.add_score()
+		game_manager.score_change.emit(10)
 		animation_player.play("pickup")

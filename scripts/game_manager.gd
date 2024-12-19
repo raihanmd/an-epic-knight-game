@@ -1,11 +1,14 @@
 class_name GameManager extends Node
 
-var _score = 0
+signal energy_change(energy: int)
+signal score_change(score: int)
 
-func add_score():
-	_score += 10
-	%ui/ScoreText.text = "Score: " + str(_score)
+@export var energy_bar: ProgressBar
+@export var score_label: Label
 
-func handle_energy(energy: int):
-	%ui/EnergyBar.value = energy
+func _on_energy_change(energy: int) -> void:
+	energy_bar.value = energy
 
+
+func _on_score_change(score: int) -> void:
+	score_label.text = 'Score: ' + str(score)

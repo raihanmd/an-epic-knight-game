@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody2D
 
-@export var speed: float = 150
+@export var speed: float = 120
 @export var jump_velocity: float = -300
 @export var dash_speed: float = 300
 @export var dash_duration: float = .3
@@ -32,7 +32,7 @@ func handle_move():
 	direction = Input.get_axis("move_left", "move_right")
 	if is_on_floor() and Input.is_action_just_pressed("roll") and $Timer.is_stopped() and energy >= dash_cost and not direction == 0:
 		energy -= dash_cost
-		%GameManager.handle_energy(energy)
+		%GameManager.energy_change.emit(energy)
 		animated_sprite.play("roll")
 		roll_start(dash_duration)
 	var speed_velocity = dash_speed if not $Timer.is_stopped() else speed
@@ -47,7 +47,10 @@ func handle_anim():
 		else:
 			animated_sprite.play("run")
 	else:
-		animated_sprite.play("jump")
+		if velocity.y <= 0:
+			animated_sprite.play('jump_up')
+		else:
+			animated_sprite.play('jump_down')
 
 func handle_flip():
 	if direction > 0:
@@ -58,7 +61,7 @@ func handle_flip():
 func heal_energy(delta: float):
 	var energy_regeneration: float = 5 * delta
 	energy = min(energy + energy_regeneration, 100)
-	%GameManager.handle_energy(energy)
+	%GameManager.energy_change.emit(energy)
 
 
 func roll_start(duration: float):
